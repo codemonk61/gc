@@ -79,7 +79,7 @@ table
 	top:5%;
 	left:34%;
 	border-collapse: collapse;
-	display:none;
+	visibility:hidden;
 	transition: 0.3s all ease;
 
 }
@@ -119,7 +119,7 @@ table
 	bottom:5%;
 	left:10%;
 	border-collapse: collapse;
-	display:none;
+	visibility:hidden;
 	transition: 0.3s all ease;
 
 }
