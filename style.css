@@ -116,7 +116,7 @@ table
 	width: 350px;
 	height: 30px;
 	position: absolute;
-	top:5%;
+	bottom:5%;
 	left:10%;
 	border-collapse: collapse;
 	visibility: hidden;
