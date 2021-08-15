@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gift Collector</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+<div class="wrapper">
+	<div class="box">
+		<center><h1>Gift-Collector</h1></center>
+		<hr>
+		<label>Name</label>
+		<input id="name" type="text" placeholder="Name">
+		<label>Choose Options</label>
+		<select id="gift" required="" placeholder="Choose">
+			<option disabled selected hidden></option>
+			<option>Envelope</option>
+			<option>Gift</option>
+		</select>
+		<label>Address</label>
+		<textarea id="address" row="8" cols="50" placeholder="Enter Address"></textarea>
+		<div class="btn">
+			<button id="btnPassport" value="Yes" onclick="showHideTable(this)">Show Table</button>
+			<button type="" id="entry">Submit</button>
+		</div>
+
+	</div>
+	<table  id="display">
+			<tr>
+				<th>Sl No.</th>
+				<th>Name</th>
+				<th>Gift/Envelope</th>
+				<th>Address</th>
+			</tr>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+				<th><i class="fas fa-window-close" id="btnPassport" value="Yes" onclick="showHideTable(this)" ></i></th>
+			</tr>
+			
+		</table>
+</div>
+
+		
+<script>
+	var entry = document.getElementById("entry");
+	entry.addEventListener("click",displayDetails);
+	var slno=1;
+	var row=1;
+	function displayDetails()
+	{
+		var name=document.getElementById("name").value;
+		var gift=document.getElementById("gift").value;
+		var address=document.getElementById("address").value;
+
+		if(!name || !gift || !address)
+		{
+			alert("Plaese Fill All Boxes");
+			return;
+		}
+		var display=document.getElementById("display");
+
+		var newRow=display.insertRow(row);
+		var cell0=newRow.insertCell(0);
+		var cell1=newRow.insertCell(1);
+		var cell2=newRow.insertCell(2);
+		var cell3=newRow.insertCell(3);
+
+		cell0.innerHTML=slno;
+		cell1.innerHTML=name;
+		 cell2.innerHTML=gift;
+		cell3.innerHTML=address;
+		row++;
+		slno++;
+	}
+
+	//showHide Table
+
+	function showHideTable(btnPassport)
+	{
+		var tbPassport=document.getElementById("display");
+		if(btnPassport.value=="Yes")
+		{
+			tbPassport.style.visibility = 'visible';
+			btnPassport.value="No"
+		}
+		else
+		{
+			tbPassport.style.visibility  = 'hidden';
+			btnPassport.value="Yes";
+
+		}
+	}
+
+
+</script>
+</body>
+</html>
