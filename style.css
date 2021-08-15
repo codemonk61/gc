@@ -79,7 +79,7 @@ table
 	top:5%;
 	left:34%;
 	border-collapse: collapse;
-	visibility: hidden;
+	display:none;
 	transition: 0.3s all ease;
 
 }
